@@ -47,7 +47,4 @@ m n o p
 
 ## Possible improvements
 
-* Support a special “QU” tile
-* Pretty-print the board
-* Limit output to top N words
 * Show the path used to form each word
