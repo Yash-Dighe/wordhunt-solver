@@ -1,4 +1,4 @@
-# WordHunt / Boggle Solver
+# WordHunt Solver
 
 A 4×4 letter-board word finder with a **bubbly, colorful web UI** and a C++ backend that uses a Trie and depth-first search.
 
@@ -51,6 +51,9 @@ Board order is row-major (first 4 letters = first row, etc.).
 
 ## Possible improvements
 
+<<<<<<< HEAD
 * Add scoring like real Boggle
 * Support a special “QU” tile
+=======
+>>>>>>> ad1d7571451db38b38fed6b819b180a63c3e3d36
 * Show the path used to form each word
