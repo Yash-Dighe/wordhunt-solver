@@ -1,4 +1,4 @@
-# WordHunt / Boggle Solver
+# WordHunt Solver
 
 A simple C++ program that finds valid words on a 4×4 letter board using a Trie and depth-first search.
 
@@ -47,7 +47,6 @@ m n o p
 
 ## Possible improvements
 
-* Add scoring like real Boggle
 * Support a special “QU” tile
 * Pretty-print the board
 * Limit output to top N words
