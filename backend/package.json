@@ -1,0 +1,10 @@
+{
+  "name": "wordhunt-solver-backend",
+  "version": "1.0.0",
+  "description": "API server for Word Hunt solver",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "make"
+  }
+}
