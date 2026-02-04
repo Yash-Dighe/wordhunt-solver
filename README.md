@@ -1,54 +1,56 @@
 # WordHunt / Boggle Solver
 
-A simple C++ program that finds valid words on a 4×4 letter board using a Trie and depth-first search.
+A 4×4 letter-board word finder with a **bubbly, colorful web UI** and a C++ backend that uses a Trie and depth-first search.
 
-## What it does
+## Project layout
 
-* Loads a dictionary into a Trie
-* Searches the board in all 8 directions
-* Avoids reusing tiles in the same word
-* Uses prefix pruning to speed things up
-* Prints the longest words found first
+* **`frontend/`** — Web UI (HTML, CSS, JS): 4×4 grid, solve button, word list
+* **`backend/`** — C++ solver + Node API server
+  * `Trie.h` / `Trie.cpp` — prefix tree for fast word lookup
+  * `Board.h` / `Board.cpp` — board representation + DFS solver
+  * `main.cpp` — CLI entry (loads dictionary, runs solver)
+  * `Words.txt` — dictionary (same folder as the executable)
+  * `server.js` — HTTP server: serves the frontend and `POST /api/solve`
 
-## How to build
+## Quick start
+
+1. **Build the C++ solver** (from repo root or `backend/`):
+
+   ```bash
+   cd backend
+   make
+   ```
+
+2. **Start the server** (serves frontend + API):
+
+   ```bash
+   cd backend
+   npm start
+   ```
+
+3. Open **http://localhost:3000** in your browser. Enter 16 letters (left-to-right, top-to-bottom), then click **Solve**.
+
+## CLI (optional)
+
+Run the solver from the command line with a 16-letter string:
 
 ```bash
-make
+cd backend
+./wordhunt_solver    # then type 16 letters when prompted
+# or
+./wordhunt_solver abcdefghijklmnop
 ```
 
-## How to run
+Board order is row-major (first 4 letters = first row, etc.).
 
-Provide a 16-letter board as a single string (row-major order):
+## How it works
 
-```bash
-./wordhunt abcdefghijklmnop
-```
-
-Example (conceptual board):
-
-```
-a b c d
-e f g h
-i j k l
-m n o p
-```
-
-## Files
-
-* `Trie.h / Trie.cpp` — prefix tree for fast word lookup
-* `Board.h / Board.cpp` — board representation + DFS solver
-* `main.cpp` — loads the dictionary and runs the solver
-* `Words.txt` — dictionary
-
-## Notes
-
-* Only words of length ≥ 3 are considered.
-* Each word is reported at most once, even if it can be formed in multiple ways.
+* Loads `Words.txt` into a Trie (path is relative to the executable’s working directory).
+* Searches the board in all 8 directions with DFS.
+* Uses prefix pruning and reports each word once; only words of length ≥ 3.
 
 ## Possible improvements
 
 * Add scoring like real Boggle
 * Support a special “QU” tile
-* Pretty-print the board
-* Limit output to top N words
 * Show the path used to form each word

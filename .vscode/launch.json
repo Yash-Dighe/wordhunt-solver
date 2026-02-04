@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/yashd/projects/wordhunt-solver",
-      "program": "c:/Users/yashd/projects/wordhunt-solver/build/Debug/outDebug",
+      "cwd": "${workspaceFolder}/backend",
+      "program": "${workspaceFolder}/backend/wordhunt_solver.exe",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

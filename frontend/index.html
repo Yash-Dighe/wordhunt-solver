@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Hunt Solver</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <main class="container">
+    <header class="scoreboard">
+      <h1 class="scoreboard-title">Word Hunt Solver</h1>
+    </header>
+
+    <section class="board-wrap">
+      <div class="board-frame">
+        <div class="grid" id="grid" role="group" aria-label="4 by 4 letter grid">
+          <!-- 16 inputs filled by JS -->
+        </div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-solve" id="solveBtn">Solve</button>
+        <button type="button" class="btn btn-clear" id="clearBtn">Clear</button>
+      </div>
+    </section>
+
+    <section class="results-section hidden" id="resultsSection">
+      <h2 class="results-title">Words</h2>
+      <div class="results-meta" id="resultsMeta"></div>
+      <div class="words-wrap">
+        <ul class="words-list" id="wordsList"></ul>
+      </div>
+      <p class="results-empty" id="resultsEmpty">Enter 16 letters and tap Solve.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
