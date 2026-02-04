@@ -30,6 +30,14 @@ function serveFrontend(req, res) {
     '.css': 'text/css',
     '.js': 'application/javascript',
     '.ico': 'image/x-icon',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.jpeg': 'image/jpeg',
+    '.svg': 'image/svg+xml',
+    '.ttf': 'font/ttf',
+    '.otf': 'font/otf',
+    '.woff': 'font/woff',
+    '.woff2': 'font/woff2',
   };
   if (path.relative(FRONTEND_DIR, filePath).startsWith('..')) {
     res.writeHead(403);
